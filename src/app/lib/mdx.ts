@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { BlogMetadata, BlogPost } from '../types/blog';
 import { serialize } from 'next-mdx-remote/serialize';
 
-const POSTS_DIRECTORY = path.join(process.cwd(), 'content', 'posts');
+export const POSTS_DIRECTORY = path.join(process.cwd(), 'src', 'app', 'content', 'posts');
 
 // Step 1- We have to read MDX files
 export function readMDXFile(filename: string): string {
