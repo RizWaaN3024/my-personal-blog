@@ -25,7 +25,7 @@ export function readMDXFile(filename: string): string {
  * Step 2: We have to now Parse FrontMatter
  * Purpose: To seperate the metaData from MDX content using gray-matter 
  * */ 
-export function parseFrontMatter(rawContent: string): { metadata: BlogMetadata, content: string} {
+export function parseFrontmatter(rawContent: string): { metadata: BlogMetadata, content: string} {
     try {
         const { data, content } = matter(rawContent);
 
@@ -92,7 +92,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
 
         const filename = `${slug}.mdx`;
         const rawContent = readMDXFile(filename);
-        const { metadata, content } = parseFrontMatter(rawContent);
+        const { metadata, content } = parseFrontmatter(rawContent);
 
         metadata.slug = slug;
 
@@ -117,7 +117,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
  * Purpose: List all the filenames in the current directory
  * It will output an array of filenames
  */
-export function getAllFilenames(): string[] {
+export function getAllMDXFilenames(): string[] {
     try {
         const files = fs.readdirSync(POSTS_DIRECTORY);
 
