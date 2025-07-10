@@ -11,7 +11,7 @@ const HeroGridSection = () => {
                         <div className="grid grid-cols-1 gap-5">
                             <div className="col-span-1">
                                 <div className="aspect-[606/318] w-[606px] max-w-full relative hover:opacity-90">
-                                    <Image 
+                                    <Image
                                         src={"/test-blog.webp"}
                                         alt="test-blog"
                                         fill
