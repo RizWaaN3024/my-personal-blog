@@ -39,34 +39,39 @@ const HeroGridSection = () => {
                         </div>
                     </div>
                     <div className="col-span-1 flex flex-col gap-6">
-                        <div className="grid md:grid-cols-2 gap-5 items-start">
-                            <div className="col-span-1">
-                                <Link href={"/"} aria-label='Blog-item'>
-                                <div className="relative pt-[52.5%]">
-                                    <Image 
-                                        src={"/test-blog.webp"}
-                                        alt="test-blog"
-                                        fill
-                                        loading={"lazy"}
-                                        className="rounded-md"
-                                    />
+                        {Array(3).fill(null).map((_, idx) => {
+                            return (
+                                <div key={idx} className="grid md:grid-cols-2 gap-5 items-start">
+                                    <div className="col-span-1">
+                                        <Link href={"/"} aria-label='Blog-item'>
+                                        <div className="relative pt-[52.5%]">
+                                            <Image 
+                                                src={"/test-blog.webp"}
+                                                alt="test-blog"
+                                                fill
+                                                loading={"lazy"}
+                                                className="rounded-md"
+                                            />
+                                        </div>
+                                        </Link>
+                                    </div>
+                                    <div className="col-span-1 flex flex-col gap-2">
+                                        <h2 className="text-lg font-semibold leading-tight text-slate-300 dark:text-neutral-50">
+                                            <Link href={"/"} className="hover:text-primary dark:hover:text-primary hover:underline">
+                                                Making DevSecOps Work by Balancing Speed, Security & Scale
+                                            </Link>
+                                        </h2>
+                                        <Link href={"/"}>
+                                            <p className="text-md leading-snug text-slate-300 dark:text-neutral-400">Building and shipping software quickly is necessity in today competitive landscape. However, accel…</p>
+                                        </Link>
+                                        <div className="text-sm font-semibold text-slate-500 dark:text-neutral-400">
+                                            <time dateTime={new Date().toISOString()}>{moment().format('MMMM D YYYY')}</time>
+                                        </div>
+                                    </div>
                                 </div>
-                                </Link>
-                            </div>
-                            <div className="col-span-1 flex flex-col gap-2">
-                                <h2 className="text-lg font-semibold leading-tight text-slate-300 dark:text-neutral-50">
-                                    <Link href={"/"} className="hover:text-primary dark:hover:text-primary hover:underline">
-                                        Making DevSecOps Work by Balancing Speed, Security & Scale
-                                    </Link>
-                                </h2>
-                                <Link href={"/"}>
-                                    <p className="text-md leading-snug text-slate-300 dark:text-neutral-400">Building and shipping software quickly is necessity in today competitive landscape. However, accel…</p>
-                                </Link>
-                                <div className="text-sm font-semibold text-slate-500 dark:text-neutral-400">
-                                    <time dateTime={new Date().toISOString()}>{moment().format('MMMM D YYYY')}</time>
-                                </div>
-                            </div>
-                        </div>
+                                
+                            )
+                        })}
                     </div>
                 </div>
             </div>
