@@ -8,7 +8,7 @@ const Navbar = () => {
             <div className="lg:container mx-auto px-4">
                 <div className="py-5 flex items-center justify-between">
                     <div>
-                        <h1 className="font-semibold text-4xl">Rizwaan Ansari</h1>
+                        <h1 className="font-semibold text-4xl">Rizwaan.dev</h1>
                     </div>
                     <div className="flex items-center">
                         {navLinks.map((link, idx) => {

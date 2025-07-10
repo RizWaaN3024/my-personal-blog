@@ -11,15 +11,17 @@ const HeroGridSection = () => {
                     <div className="col-span-1">
                         <div className="grid grid-cols-1 gap-5">
                             <div className="col-span-1">
-                                <div className="aspect-[606/318] w-[606px] max-w-full relative hover:opacity-90">
-                                    <Image
-                                        src={"/test-blog.webp"}
-                                        alt="test-blog"
-                                        fill
-                                        loading={"lazy"}
-                                        className="rounded-md w-full h-full object-cover"
-                                    />
-                                </div>
+                                <Link href={"/"}>
+                                    <div className="aspect-[606/318] w-[606px] max-w-full relative hover:opacity-90">
+                                        <Image
+                                            src={"/test-blog.webp"}
+                                            alt="test-blog"
+                                            fill
+                                            loading={"lazy"}
+                                            className="rounded-md w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </Link>
                             </div>
                             <div className="col-span-1 flex flex-col gap-2">
                                 <Link href={"/"}>
