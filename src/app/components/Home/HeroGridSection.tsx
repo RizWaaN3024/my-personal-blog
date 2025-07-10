@@ -5,7 +5,7 @@ import React from 'react'
 
 const HeroGridSection = () => {
     return (
-        <section className="py-25">
+        <section className="py-16 lg:py-25">
             <div className="lg:container mx-auto px-4">
                 <div className="grid grid-cols-2 gap-6">
                     <div className="col-span-1">
