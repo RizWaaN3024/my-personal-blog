@@ -1,3 +1,4 @@
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 
 export interface BlogMetadata {
@@ -7,12 +8,13 @@ export interface BlogMetadata {
     description?: string;
     published: boolean;
     slug: string;
+    featuredImage: string;
 }
 
 export interface BlogPost {
     metadata: BlogMetadata;
     content: string;
-    compiledContent?: unknown;
+    compiledContent?: MDXRemoteSerializeResult;
 }
 
 export interface BlogSummary {

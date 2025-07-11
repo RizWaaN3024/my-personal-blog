@@ -1,3 +1,4 @@
+"use client";
 import { BlogPost } from '@/app/types/blog'
 import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
 import moment from 'moment';
@@ -12,37 +13,37 @@ interface BlogDetailLayoutProps {
 
 const mdxComponents = {
     h1: ({ children }: any) => (
-        <h1 className="text-3xl lg:text-4xl font-bold mb-6 text-slate-900 dark:text-white">
+        <h1 className="text-3xl lg:text-4xl font-bold mb-6 text-white dark:text-white">
             {children}
         </h1>
     ),
     h2: ({ children }: any) => (
-        <h2 className="text-2xl lg:text-3xl font-semibold mb-4 mt-8 text-slate-800 dark:text-slate-100">
+        <h2 className="text-2xl lg:text-3xl font-semibold mb-4 mt-8 text-white dark:text-slate-100">
             {children}
         </h2>
     ),
     h3: ({ children }: any) => (
-        <h3 className="text-xl lg:text-2xl font-medium mb-3 mt-6 text-slate-700 dark:text-slate-200">
+        <h3 className="text-xl lg:text-2xl font-medium mb-3 mt-6 text-white dark:text-slate-200">
             {children}
         </h3>
     ),
     p: ({ children }: any) => (
-        <p className="text-base lg:text-lg leading-relaxed mb-4 text-slate-600 dark:text-slate-300">
+        <p className="text-base lg:text-lg leading-relaxed mb-4 text-white dark:text-slate-300">
             {children}
         </p>
     ),
     ul: ({ children }: any) => (
-        <ul className="list-disc pl-6 mb-4 space-y-2 text-slate-600 dark:text-slate-300">
+        <ul className="list-disc pl-6 mb-4 space-y-2 text-white dark:text-slate-300">
             {children}
         </ul>
     ),
     ol: ({ children }: any) => (
-        <ol className="list-decimal pl-6 mb-4 space-y-2 text-slate-600 dark:text-slate-300">
+        <ol className="list-decimal pl-6 mb-4 space-y-2 text-white dark:text-slate-300">
             {children}
         </ol>
     ),
     blockquote: ({ children }: any) => (
-        <blockquote className="border-l-4 border-primary pl-6 py-2 mb-6 italic text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/50 rounded-r-lg">
+        <blockquote className="border-l-4 border-primary pl-6 py-2 mb-6 italic text-white dark:text-slate-300 bg-slate-50 dark:bg-slate-800/50 rounded-r-lg">
             {children}
         </blockquote>
     ),
@@ -52,7 +53,7 @@ const mdxComponents = {
         </code>
     ),
     pre: ({ children }: any) => (
-        <pre className="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto mb-6 text-sm">
+        <pre className="bg-slate-900 text-white p-4 rounded-lg overflow-x-auto mb-6 text-sm">
             {children}
         </pre>
     ),
@@ -77,13 +78,13 @@ const BlogDetailLayout: React.FC<BlogDetailLayoutProps> = ({ post }) => {
     const readingTime = Math.ceil(wordCount / wordsPerMinute);
 
     return (
-        <div className="min-h-screen bg-white dark:bg-slate-900">
+        <div className="min-h-screen bg-background dark:bg-slate-900">
             {/* Navigation Bar */}
-            <nav className="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700">
+            <nav className="sticky top-0 z-50 bg-background dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-900 dark:border-slate-700">
                 <div className="container mx-auto px-4 py-4">
                     <Link
-                        href="/blog"
-                        className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
+                        href="/"
+                        className="inline-flex items-center gap-2 text-md leading-snug text-slate-300 dark:text-neutral-400 hover:text-primary transition-colors"
                     >
                         <ArrowLeft size={20} />
                         <span>Back to Blog</span>
@@ -96,7 +97,7 @@ const BlogDetailLayout: React.FC<BlogDetailLayoutProps> = ({ post }) => {
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto">
                         {/* Metadata */}
-                        <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-slate-500 dark:text-slate-400">
+                        <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-md leading-snug text-slate-300 dark:text-neutral-400">
                             <div className="flex items-center gap-2">
                                 <Calendar size={16} />
                                 <time dateTime={metadata.date}>
@@ -110,13 +111,13 @@ const BlogDetailLayout: React.FC<BlogDetailLayoutProps> = ({ post }) => {
                         </div>
 
                         {/* Title */}
-                        <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-slate-900 dark:text-white leading-tight">
+                        <h1 className="text-4xl lg:text-6xl font-bold mb-6 dark:text-white leading-tight">
                             {metadata.title}
                         </h1>
 
                         {/* Description */}
                         {metadata.description && (
-                            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+                            <p className="text-xl lg:text-2xl mb-8 leading-relaxed">
                                 {metadata.description}
                             </p>
                         )}
@@ -128,7 +129,7 @@ const BlogDetailLayout: React.FC<BlogDetailLayoutProps> = ({ post }) => {
                                     <Link
                                         key={tag}
                                         href={`/blog/tag/${tag}`}
-                                        className="inline-flex items-center gap-1 px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-sm hover:bg-primary hover:text-white transition-colors"
+                                        className="inline-flex items-center gap-1 px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-sm hover:bg-slate-600 hover:text-white transition-colors"
                                     >
                                         <Tag size={14} />
                                         {tag}
@@ -138,15 +139,25 @@ const BlogDetailLayout: React.FC<BlogDetailLayoutProps> = ({ post }) => {
                         )}
 
                         {/* Hero Image */}
-                        <div className="aspect-video relative rounded-xl overflow-hidden mb-12">
-                            <Image
-                                src="/test-blog.webp"
-                                alt={metadata.title}
-                                fill
-                                className="object-cover"
-                                priority
-                            />
-                        </div>
+                        {metadata.featuredImage ? (
+                            <div className="aspect-video relative rounded-xl overflow-hidden mb-12">
+                                <Image
+                                    src={metadata.featuredImage}
+                                    alt={metadata.title}
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                />
+                            </div>
+                        ) : (
+                            <div className="aspect-video relative rounded-xl overflow-hidden mb-12 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500">
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <h2 className="text-white text-2xl lg:text-4xl font-bold text-center px-4">
+                                        {metadata.title}
+                                    </h2>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </header>
@@ -157,7 +168,9 @@ const BlogDetailLayout: React.FC<BlogDetailLayoutProps> = ({ post }) => {
                     <div className="max-w-4xl mx-auto">
                         {/* Article Content */}
                         <article className="prose prose-lg prose-slate dark:prose-invert max-w-none">
-                            <MDXRemote {...compiledContent} components={mdxComponents} />
+                            {compiledContent && (
+                                <MDXRemote {...compiledContent} components={mdxComponents} />
+                            )}
                         </article>
 
                         {/* Article Footer */}
@@ -168,7 +181,7 @@ const BlogDetailLayout: React.FC<BlogDetailLayoutProps> = ({ post }) => {
                                         <Link
                                             key={tag}
                                             href={`/blog/tag/${tag}`}
-                                            className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-sm hover:bg-primary hover:text-white transition-colors"
+                                            className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-sm hover:bg-slate-600 hover:text-white transition-colors"
                                         >
                                             #{tag}
                                         </Link>
@@ -176,7 +189,7 @@ const BlogDetailLayout: React.FC<BlogDetailLayoutProps> = ({ post }) => {
                                 </div>
 
                                 {/* Share buttons could go here */}
-                                <div className="text-sm text-slate-500 dark:text-slate-400">
+                                <div className="text-sm dark:text-slate-400">
                                     Published on {moment(metadata.date).format('MMMM D, YYYY')}
                                 </div>
                             </div>
