@@ -59,9 +59,9 @@ const HeroGridSection = async () => {
                                 )}
                                 <Link href={`/blog/${featuredPost.metadata.slug}`}>
                                     <p className="text-md leading-snug text-slate-300 dark:text-neutral-400">
-                                        {featuredPost.metadata.description?.length > 150
-                                            ? `${featuredPost?.metadata?.description?.substring(0, 150)}...`
-                                            : featuredPost?.metadata?.description
+                                        {featuredPost.metadata.description?.length && featuredPost.metadata.description.length > 150
+                                            ? `${featuredPost.metadata.description.substring(0, 150)}...`
+                                            : featuredPost.metadata.description
                                         }
                                     </p>
                                 </Link>
