@@ -1,5 +1,5 @@
 import { BlogPost } from '@/app/types/blog'
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
 import moment from 'moment';
 import { MDXRemote } from 'next-mdx-remote';
 import Image from 'next/image';
