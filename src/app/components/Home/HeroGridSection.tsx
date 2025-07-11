@@ -14,13 +14,13 @@ const HeroGridSection = async () => {
     console.log(featuredPost);
     return (
         <section className="py-16 lg:py-25">
-            <div className="lg:container mx-auto px-4">
-                <div className="grid grid-cols-2 gap-6">
+            <div className="lg:container mx-auto px-6 lg:px-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div className="col-span-1">
                         <div className="grid grid-cols-1 gap-5">
                             <div className="col-span-1">
                                 <Link href={`/blog/${featuredPost.metadata.slug}`}>
-                                    <div className="aspect-[606/318] w-[606px] max-w-full relative hover:opacity-90">
+                                    <div className="aspect-[606/318] lg:w-[606px] max-w-full relative hover:opacity-90">
                                         {featuredPost.metadata.featuredImage ? (
                                             <Image
                                                 src={featuredPost.metadata.featuredImage}
