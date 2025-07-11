@@ -42,7 +42,8 @@ export function parseFrontmatter(rawContent: string): { metadata: BlogMetadata, 
             tags: Array.isArray(data.tags) ? data.tags : [],
             description: data.description || "",
             published: data.published !== false,
-            slug: data.slug || ""
+            slug: data.slug || "",
+            featuredImage: data.featuredImage || undefined
         };
 
         console.log(`Successfully parsed Front matter for: ${metadata.title}`);
