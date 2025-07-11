@@ -48,7 +48,7 @@ const mdxComponents = {
         </blockquote>
     ),
     code: ({ children }: any) => (
-        <code className="bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded text-sm font-mono text-slate-800 dark:text-slate-200">
+        <code className="font-mono text-sm text-emerald-600 dark:text-emerald-400 font-medium">
             {children}
         </code>
     ),
