@@ -16,3 +16,17 @@ export interface ISubscriber {
     createdAt?: Date;
     updatedAt?: Date;
 }
+
+export interface EmailTemplate {
+    subject: string;
+    html: string;
+    text: string;
+}
+
+export interface BlogPost {
+    slug: string;
+    title: string;
+    excerpt: string;
+    publishedAt: string;
+    content?: string;
+}
