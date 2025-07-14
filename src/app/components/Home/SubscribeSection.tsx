@@ -1,11 +1,12 @@
 "use client";
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import z from 'zod'
 import { useForm } from 'react-hook-form';
 import { Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import axios from 'axios';
 
 const subscribeFormSchema = z.object({
     email: z.email({ error: "Please enter a valid email" })
@@ -14,19 +15,37 @@ const subscribeFormSchema = z.object({
 type formSchemaType = z.infer<typeof subscribeFormSchema>;
 
 const SubscribeSection = () => {
-    const handleSubscribeFormSubmit = (data: any) => {
-        alert(JSON.stringify(data, null, 4))
-    }
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [message, setMessage] = useState<string>('');
     const { 
         handleSubmit, 
         control,
-        formState:{ errors }
+        formState:{ errors },
+        reset
     } = useForm<formSchemaType>({
         resolver: zodResolver(subscribeFormSchema),
         defaultValues: {
             email: ""
         }
     });
+    const handleSubscribeFormSubmit = async (data: formSchemaType) => {
+        setStatus('loading');
+        try {
+            const response = await axios.post('/api/subscribe', { email: data.email });
+            if (response.status == 200 || response.status == 201) {
+                setStatus('success');
+                setMessage(response.data.message);
+                reset();
+            }
+        } catch (error) {
+            setStatus('error');
+            if (axios.isAxiosError(error) && error.response) {
+                setMessage(error.response.data.error || 'An error occurred');
+            } else {
+                setMessage('Network error, Please try again');
+            }
+        }
+    }
     return (
         <section className="py-16 lg:py-20">
             <div className="lg:container mx-auto px-6 lg:px-4">

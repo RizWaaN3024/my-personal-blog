@@ -11,7 +11,6 @@ const HeroGridSection = async () => {
             <div><h2>No Featured Post</h2></div>
         )
     }
-    console.log(featuredPost);
     return (
         <section className="py-16 lg:py-25">
             <div className="lg:container mx-auto px-6 lg:px-4">
