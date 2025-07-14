@@ -126,7 +126,7 @@ const HeroGridSection = async () => {
                                     More blogs coming soon
                                 </h3>
                                 <p className="text-base font-medium text-slate-400 dark:text-slate-200">
-                                    Stay tuned for more content
+                                    Stay tuned for more content. Subscribe!!!
                                 </p>
                             </div>
 
