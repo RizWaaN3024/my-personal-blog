@@ -1,6 +1,8 @@
 import { connectToDatabase } from "@/app/lib/mongodb";
 import Subscriber from "@/app/models/subscriber";
+import { sendWelcomeEmail } from "@/lib/email";
 import { rateLimiter } from "@/lib/rateLimit";
+import { generateUnsubscribeUrl, isValidEmail } from "@/lib/utils";
 import { NextRequest, NextResponse } from "next/server";
 
 
