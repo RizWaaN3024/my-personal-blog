@@ -25,16 +25,16 @@ export async function POST(request: NextRequest) {
         }
 
         subscriber.isActive = false;
-        await subscriber.save;
+        await subscriber.save();
 
         return NextResponse.json(
-            { message: "Successfullt subscribed" },
+            { message: "Successfully Unsubscribed" },
             { status: 200 }
         );
     } catch (error) {
         console.error('Unsubscribe Token: ', error);
         return NextResponse.json(
-            { error: 'An error occurred while subscribing' },
+            { error: 'An error occurred while Unsubscribing' },
             { status: 500 }
         );
     }
