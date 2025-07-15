@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
         }
 
         return NextResponse.json(
-            { 
+            {
                 message: `Newsletter sent to ${successCount} subscribers`,
                 success: successCount,
                 errors: errorCount,
