@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
 
         if (!token) {
             return NextResponse.json(
-                { error: "Unsubscribe Token is required "},
+                { error: "Unsubscribe Token is required " },
                 { status: 400 }
             );
         }
