@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
 
         if (!email || !isValidEmail(email)) {
             return NextResponse.json(
-                { error: 'Please provide a valid email address'},
+                { error: 'Please provide a valid email address' },
                 { status: 400 }
             );
         }
@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
             windowMs: 60000,
             maxAttempts: 5
         });
-        
+
         if (!rateLimit.success) {
             return NextResponse.json(
                 {
@@ -76,12 +76,12 @@ export async function POST(request: NextRequest) {
 
         const unsubscribeUrl = generateUnsubscribeUrl(subscriber.unsubscribeToken);
         const emailResult = await sendWelcomeEmail(email, unsubscribeUrl);
-        
+
         if (!emailResult.success) {
             console.error("Failed to send welcome email", emailResult.error);
         }
 
-        return  NextResponse.json(
+        return NextResponse.json(
             { message: "Susccessfully subscribed! Check your email for subscription." },
             { status: 201 }
         );
