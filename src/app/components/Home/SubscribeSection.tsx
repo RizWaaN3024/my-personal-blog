@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import { Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
+import { toast } from 'sonner';
 
 const subscribeFormSchema = z.object({
     email: z.email({ error: "Please enter a valid email" })
@@ -35,6 +36,7 @@ const SubscribeSection = () => {
             if (response.status == 200 || response.status == 201) {
                 setStatus('success');
                 setMessage(response.data.message);
+                toast("You’re in! 📬 Blog updates will now chase you down (nicely).");
                 reset();
             }
         } catch (error) {
@@ -44,6 +46,7 @@ const SubscribeSection = () => {
             } else {
                 setMessage('Network error, Please try again');
             }
+            toast("Yikes! 😬 That didn’t go as planned. Mind trying once more?");
         }
     }
     return (

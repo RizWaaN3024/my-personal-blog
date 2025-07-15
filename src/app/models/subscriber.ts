@@ -59,9 +59,7 @@ const subscriberSchema = new Schema<SubscriberDocument>({
 })
 
 // Indexes
-subscriberSchema.index({ email: 1 });
 subscriberSchema.index({ isActive: 1 });
-subscriberSchema.index({ unsubscribeToken: 1 });
 
 // Static Methods
 // method to get total active subscribers
