@@ -63,17 +63,17 @@ subscriberSchema.index({ isActive: 1 });
 
 // Static Methods
 // method to get total active subscribers
-subscriberSchema.statics.getActiveCount = function(): Promise<number> {
+subscriberSchema.statics.getActiveCount = function (): Promise<number> {
     return this.countDocuments({ isActive: true });
 }
 
 // Instance Methods
-subscriberSchema.methods.generateUnsubscribeToken = function(): string {
+subscriberSchema.methods.generateUnsubscribeToken = function (): string {
     this.unsubscribeToken = crypto.randomBytes(32).toString('hex');
     return this.unsubscribeToken;
 }
 
-subscriberSchema.methods.generateVerificationToken = function(): string {
+subscriberSchema.methods.generateVerificationToken = function (): string {
     this.verificationToken = crypto.randomBytes(32).toString('hex');
     return this.verificationToken;
 }
