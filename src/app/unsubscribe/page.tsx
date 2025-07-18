@@ -22,7 +22,7 @@ export default function UnsubscribePage(): JSX.Element {
         const unsubscribe = async (): Promise<void> => {
             try {
                 const response = await axios.post('/api/unsubscribe', { token });
-                
+
                 setStatus('success');
                 setMessage(response.data.message);
             } catch (error) {
@@ -52,9 +52,9 @@ export default function UnsubscribePage(): JSX.Element {
 
                 {status === 'success' && (
                     <div>
-                        <div 
-                            className="text-6xl mb-6 text-green-400" 
-                            style={{textShadow: '0 0 10px #10b981'}}
+                        <div
+                            className="text-6xl mb-6 text-green-400"
+                            style={{ textShadow: '0 0 10px #10b981' }}
                         >
                             ✓
                         </div>
@@ -67,9 +67,9 @@ export default function UnsubscribePage(): JSX.Element {
 
                 {status === 'error' && (
                     <div>
-                        <div 
-                            className="text-6xl mb-6 text-red-400" 
-                            style={{textShadow: '0 0 10px #ef4444'}}
+                        <div
+                            className="text-6xl mb-6 text-red-400"
+                            style={{ textShadow: '0 0 10px #ef4444' }}
                         >
                             ✗
                         </div>
