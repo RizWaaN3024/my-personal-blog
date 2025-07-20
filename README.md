@@ -1,4 +1,6 @@
 # Personal Blog
+<img width="1470" height="878" alt="Screenshot 2025-07-20 at 3 46 50 PM" src="https://github.com/user-attachments/assets/18bbc5ed-35a1-480f-a306-2182a49d1221" />
+<img width="1470" height="878" alt="Screenshot 2025-07-20 at 3 47 03 PM" src="https://github.com/user-attachments/assets/eab99e09-f675-4308-808d-138e90e38f69" />
 
 A modern, full-stack personal blog built with Next.js, featuring a clean design and robust email functionality.
 
