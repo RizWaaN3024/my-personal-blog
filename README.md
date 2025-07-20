@@ -10,10 +10,11 @@
     </td>
   </tr>
   <tr>
-    <td align="center"><em>Homepage</em></td>
-    <td align="center"><em>Article Page</em></td>
+    <td align="center"><em>Homepage - Hero Section</em></td>
+    <td align="center"><em>Homepage - Blog Posts</em></td>
   </tr>
 </table>
+
 <img width="1470" height="878" alt="Screenshot 2025-07-20 at 3 48 02 PM" src="https://github.com/user-attachments/assets/4c0ceb3b-44ce-4a3b-a0fa-103e6b71d4f4" />
 
 A modern, full-stack personal blog built with Next.js, featuring a clean design and robust email functionality.
