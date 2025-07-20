@@ -1,6 +1,19 @@
 # Personal Blog
-<img width="1470" height="878" alt="Screenshot 2025-07-20 at 3 46 50 PM" src="https://github.com/user-attachments/assets/18bbc5ed-35a1-480f-a306-2182a49d1221" />
-<img width="1470" height="878" alt="Screenshot 2025-07-20 at 3 47 03 PM" src="https://github.com/user-attachments/assets/eab99e09-f675-4308-808d-138e90e38f69" />
+📸 Screenshots
+<table>
+  <tr>
+    <td width="50%">
+      <img src="https://github.com/user-attachments/assets/18bbc5ed-35a1-480f-a306-2182a49d1221" alt="Blog Homepage" width="100%" />
+    </td>
+    <td width="50%">
+      <img src="https://github.com/user-attachments/assets/eab99e09-f675-4308-808d-138e90e38f69" alt="Blog Article Page" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><em>Homepage</em></td>
+    <td align="center"><em>Article Page</em></td>
+  </tr>
+</table>
 <img width="1470" height="878" alt="Screenshot 2025-07-20 at 3 48 02 PM" src="https://github.com/user-attachments/assets/4c0ceb3b-44ce-4a3b-a0fa-103e6b71d4f4" />
 
 A modern, full-stack personal blog built with Next.js, featuring a clean design and robust email functionality.
