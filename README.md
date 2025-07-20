@@ -11,7 +11,7 @@
   </tr>
   <tr>
     <td align="center"><em>Homepage - Hero Section</em></td>
-    <td align="center"><em>Homepage - Blog Posts</em></td>
+    <td align="center"><em>Homepage - Subscribe</em></td>
   </tr>
 </table>
 
